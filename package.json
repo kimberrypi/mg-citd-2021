@@ -28,5 +28,21 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.7.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages-deploy -- 'A custom commit message'"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "cname": "nope.org",
+    "prep": [
+      "build-sass",
+      "optimize-img"
+    ],
+    "commit": "a custom commit message",
+    "post": [
+      "clean-source"
+    ],
+    "noprompt": false
   }
 }
